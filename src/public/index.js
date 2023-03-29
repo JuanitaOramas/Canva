@@ -12,11 +12,15 @@ function init(){
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    canvas.width = width;
-    canvas.height = height;
+
+
+    canvas.width =  window.innerWidth * 0.7;
+    canvas.height = window.innerHeight * 0.7;
     
     // Socket IO
     const socketClient = io();
+
+
 
     canvas.addEventListener('mousedown', (e) => { // cuando presiona click
         mouse.click = true;
@@ -56,6 +60,7 @@ function init(){
     }
     mainLoop();
 
+    
     
 
 }
