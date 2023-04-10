@@ -7,11 +7,14 @@ const http = require('http');
 const app = express();
 const server = http.createServer(app);
 const io = require("socket.io")(server);
+const cors = require('cors');
+
 
 //settings
 app.set('port', process.env.PORT || 3000);
 
 //middleware
+app.use(cors()); // Habilitar CORS en todas las rutas
 
 //sockets
 require('./sockets')(io);
