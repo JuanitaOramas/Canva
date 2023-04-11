@@ -6,10 +6,15 @@ const http = require('http');
 //inicialización de express
 const app = express();
 const server = http.createServer(app);
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, {
+
+        cors: {
+          origin: "http://localhost:3001", // replace with your client URL
+          methods: ["GET", "POST"]
+        }
+});
+
 const cors = require('cors');
-
-
 //settings
 app.set('port', process.env.PORT || 3000);
 
