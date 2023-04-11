@@ -13,8 +13,14 @@ const cors = require('cors');
 //settings
 app.set('port', process.env.PORT || 3000);
 
+
+
 //middleware
-app.use(cors()); // Habilitar CORS en todas las rutas
+const corsOptions = {
+    origin: 'http://localhost:3001',
+    optionsSuccessStatus: 200 // Para que el navegador no muestre un error de tipo 'preflight'
+  }
+app.use(cors(corsOptions)); // Habilitar CORS en todas las rutas
 
 //sockets
 require('./sockets')(io);
