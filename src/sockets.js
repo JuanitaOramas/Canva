@@ -18,6 +18,11 @@ module.exports = io => {
             line_history.push(cursorData.line); //almacena
             io.emit('draw_line', cursorData); //reenvia usuarios, cliente envia
         });
+        
+        socket.on("erase_line", cursorData =>{
+            line_history.splice(0,line_history.length); //borra
+            io.emit('erase_line', cursorData); //reenvia usuarios, cliente envia
+        });
 
     });
 }

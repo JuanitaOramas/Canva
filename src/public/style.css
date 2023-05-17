@@ -21,23 +21,6 @@ nav {
     background-color: white;
 }
 
-/*grid*/
-
-.main_header{ grid-area: header;}
-.menu { grid-area: menu; }
-.CanvaC { grid-area: CanvaCollaborative; }
-.CanvaPersonal { grid-area: CanvaPersonal; 
-                background-color: black;}
-
-.Collaboration_Container {
-    display: grid;
-    grid-template-areas:
-      'header header header header header header'
-      'menu CanvaC CanvaC CanvaC CanvaC CanvaC'
-      'CanvaPersonal  CanvaC CanvaC CanvaC CanvaC CanvaC';
-    gap: 10px;
-    padding: 10px;
-}
 
 
 
